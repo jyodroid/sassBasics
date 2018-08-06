@@ -1,0 +1,9 @@
+Installation (on Mac)
+brew install sass/sass/sass
+
+To listen a folder:
+sass --watch app/sass:public/stylesheets
+on this folder: sass --watch sass:css
+
+Use simple http server to test:
+on this folder: python -m SimpleHTTPServer

@@ -1,0 +1,65 @@
+//Import partial styles
+@import 'my-partial-style';
+@import 'mixins';
+@import 'using-maths-and-extends';
+// you can use variables
+$primary-color: #ffff;
+$background: rgb(3, 1, 15);
+$font-stack: Helvetica, sans-serif;
+
+body {
+  font: 100% $font-stack;
+  background-color: $background;
+  color: $primary-color;
+}
+// Nesting: Same visual style than html
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+//A placeholder class is a special type of class that only prints when it is extended
+// This CSS won't print because %equal-heights is never extended.
+
+%equal-heights {
+  display: flex;
+  flex-wrap: wrap;
+}
+// This CSS will print because %message-shared is extended.
+%message-shared {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.message {
+  @extend %message-shared;
+}
+
+.success {
+  @extend %message-shared;
+  border-color: green;
+}
+
+.error {
+  @extend %message-shared;
+  border-color: red;
+}
+
+.warning {
+  @extend %message-shared;
+  border-color: yellow;
+}

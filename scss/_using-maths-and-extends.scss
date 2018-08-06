@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+}
+
+%article-title {
+  display: flex;
+  flex-wrap: wrap;
+  font-style: italic;
+  font-family: sans-serif;
+}
+
+.article-title {
+  @extend %article-title;
+  color: rgb(28, 65, 1);
+}
+
+.article-complement-title {
+  @extend %article-title;
+  color: rgb(145, 32, 219);
+}
+
+article[role="main"] {
+  float: left;
+  width: 600px / 960px * 100%;
+}
+
+aside[role="complementary"] {
+  float: right;
+  width: 300px / 960px * 100%;
+}
